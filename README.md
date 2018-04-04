@@ -46,6 +46,22 @@
 -1.由于自己应用中集成的是高德地图，用的是GCJ-02坐标系（火星坐标系），所以当打开百度地图时需要进行坐标转换，将火星坐标系转换成百度坐标系BD09。
  具体看代码： [CoodinateCovertor.java](https://github.com/lintianlin/OpenMapDemo/blob/master/openmap/src/main/java/com/sinfeeloo/openmap/CoodinateCovertor.java)
 
+## 使用方法 ##
+-1.Add it in your root build.gradle at the end of repositories:
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+-2.Add the dependency
+```
+dependencies {
+	        compile 'com.github.lintianlin:OpenMapDemo:v1.0.0'
+	}
+```
 ## 示例效果 ##
 <img src="https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic4.jpg" width=300 height=450 />
 <img src="https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic3.jpg" width=300 height=450 />
