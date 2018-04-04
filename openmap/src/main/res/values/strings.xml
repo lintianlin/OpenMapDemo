@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">openMap</string>
+    <string name="baidumap">百度地图</string>
+    <string name="gaodemap">高德地图</string>
+    <string name="tencentmap">腾讯地图</string>
+    <string name="calcel">取消</string>
+</resources>

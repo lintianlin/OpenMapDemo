@@ -1,0 +1,6 @@
+<resources>
+    <style name="popupwindow_style">
+        <item name="android:windowEnterAnimation">@anim/show_popupwindow</item>
+        <item name="android:windowExitAnimation">@anim/hide_popupwindow</item>
+    </style>
+</resources>

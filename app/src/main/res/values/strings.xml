@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">OpenMapDemo</string>
+    <string name="kewword">关键字搜索</string>
 </resources>

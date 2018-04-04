@@ -1,70 +1,80 @@
 package com.sinfeeloo.openmapdemo;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.amap.api.location.AMapLocation;
-import com.amap.api.location.AMapLocationClient;
-import com.amap.api.location.AMapLocationClientOption;
-import com.amap.api.location.AMapLocationListener;
-import com.amap.api.services.help.Inputtips;
-import com.amap.api.services.help.InputtipsQuery;
 import com.amap.api.services.help.Tip;
-import com.amap.api.services.poisearch.PoiSearch;
+import com.sinfeeloo.openmap.OpenMapUtil;
 
-import java.util.List;
+public class MainActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity implements Inputtips.InputtipsListener {
 
+    private TextView address;
+    private TextView lan;
+    private TextView lon;
+    private TextView searchText;
+    private TextView name;
+    private double mLatitude;
+    private double mLongitude;
+    private String mName;
+    private LinearLayout root;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText searchText = findViewById(R.id.et_search);
-        TextView address = findViewById(R.id.tv_address);
-        TextView lan = findViewById(R.id.tv_lan);
-        TextView lon = findViewById(R.id.tv_lon);
+        searchText = findViewById(R.id.tv_search);
+        name = findViewById(R.id.tv_name);
+        address = findViewById(R.id.tv_address);
+        lan = findViewById(R.id.tv_lan);
+        lon = findViewById(R.id.tv_lon);
+        root = findViewById(R.id.ll_root);
 
-        searchText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                //第二个参数传入null或者“”代表在全国进行检索，否则按照传入的city进行检索
-                InputtipsQuery inputquery = new InputtipsQuery(searchText.getText().toString(), "");
-                inputquery.setCityLimit(true);//限制在当前城市
-
-                Inputtips inputTips = new Inputtips(MainActivity.this, inputquery);
-                inputTips.setInputtipsListener(MainActivity.this);
-                inputTips.requestInputtipsAsyn();
-            }
-        });
 
         searchText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InputTipsActivity.class);
+                startActivityForResult(intent, 1);
+            }
+        });
 
+        findViewById(R.id.btn_open).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OpenMapUtil.openMapPopupWindow(MainActivity.this, root, mName, mLatitude, mLongitude);
             }
         });
     }
 
-    @Override
-    public void onGetInputtips(List<Tip> list, int i) {
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == 101 && data != null) {
+            Tip tip = data.getParcelableExtra("EXTRA_TIP");
+            if (tip.getPoiID() != null && !tip.getPoiID().equals("")) {
+                name.setText("名称：" + tip.getName());
+                address.setText("地址：" + tip.getAddress());
+                lan.setText("纬度：" + tip.getPoint().getLatitude());
+                lon.setText("经度：" + tip.getPoint().getLongitude());
+                mLatitude = tip.getPoint().getLatitude();
+                mLongitude = tip.getPoint().getLongitude();
+                mName = tip.getName();
+            }
+
+        } else if (resultCode == 102 && data != null) {
+            String keywords = data.getStringExtra("KEY_WORDS_NAME");
+            if (keywords != null && !keywords.equals("")) {
+                Toast.makeText(this, keywords, Toast.LENGTH_SHORT).show();
+            }
+        }
     }
+
 }
