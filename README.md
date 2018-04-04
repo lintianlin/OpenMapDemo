@@ -47,4 +47,7 @@
  具体看代码： [CoodinateCovertor.java](https://github.com/lintianlin/OpenMapDemo/blob/master/openmap/src/main/java/com/sinfeeloo/openmap/CoodinateCovertor.java)
 
 ## 示例效果 ##
--![Screenshot](https://github.com/amap-demo/android-place-search/raw/master/resource/download.png)
+-![Screenshot](https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic4.jpg)
+-![Screenshot](https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic3.jpg)
+-![Screenshot](https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic2.jpg)
+-![Screenshot](https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic1.jpg)
