@@ -6,9 +6,9 @@
 - 通过高德、百度、腾讯提供的Uri打开应用外部地图app.
 
 ## 高德、百度、腾讯官方uri调起app文档传送门##
-- [高德地图](http://lbs.amap.com/api/amap-mobile/guide/android/route).
-- [百度地图](http://lbsyun.baidu.com/index.php?title=uri/api/android).
-- [腾讯地图](http://lbs.qq.com/uri_v1/index.html).
+- [高德地图：http://lbs.amap.com/api/amap-mobile/guide/android/route](http://lbs.amap.com/api/amap-mobile/guide/android/route)
+- [百度地图：http://lbsyun.baidu.com/index.php?title=uri/api/android](http://lbsyun.baidu.com/index.php?title=uri/api/android)
+- [腾讯地图：http://lbs.qq.com/uri_v1/index.html](http://lbs.qq.com/uri_v1/index.html)
 
 ## 关键代码 ##
 -以高德地图为例：
@@ -44,4 +44,7 @@
 
 ## 需要注意的地方 ##
 -1.由于自己应用中集成的是高德地图，用的是GCJ-02坐标系（火星坐标系），所以当打开百度地图时需要进行坐标转换，将火星坐标系转换成百度坐标系BD09。
- 具体看代码： [CoodinateCovertor.java](http://www.baidu.com/" 百度一下"){:target="_blank"}
+ 具体看代码： [CoodinateCovertor.java](https://github.com/lintianlin/OpenMapDemo/blob/master/openmap/src/main/java/com/sinfeeloo/openmap/CoodinateCovertor.java)
+
+## 示例效果 ##
+-![Screenshot](https://github.com/amap-demo/android-place-search/raw/master/resource/download.png)
