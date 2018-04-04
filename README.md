@@ -47,7 +47,7 @@
  具体看代码： [CoodinateCovertor.java](https://github.com/lintianlin/OpenMapDemo/blob/master/openmap/src/main/java/com/sinfeeloo/openmap/CoodinateCovertor.java)
 
 ## 示例效果 ##
-<img src="https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic4" width=300 height=500 />
-<img src="https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic3" width=300 height=500 />
-<img src="https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic2" width=300 height=500 />
-<img src="https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic1" width=300 height=500 />
+<img src="https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic4.jpg" width=300 height=400 />
+<img src="https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic3.jpg" width=300 height=400 />
+<img src="https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic2.jpg" width=300 height=400 />
+<img src="https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic1.jpg" width=300 height=400 />
