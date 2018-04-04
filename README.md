@@ -48,20 +48,17 @@
 
 ## 使用方法 ##
 -1.Add it in your root build.gradle at the end of repositories:
-```
-allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
-```
+		allprojects {
+				repositories {
+					...
+					maven { url 'https://jitpack.io' }
+				}
+			}
+
 -2.Add the dependency
-```
-dependencies {
-	        compile 'com.github.lintianlin:OpenMapDemo:v1.0.0'
-	}
-```
+		dependencies {
+			        compile 'com.github.lintianlin:OpenMapDemo:v1.0.0'
+			}
 ## 示例效果 ##
 <img src="https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic4.jpg" width=300 height=450 />
 <img src="https://github.com/lintianlin/OpenMapDemo/blob/master/screenshot/pic3.jpg" width=300 height=450 />
